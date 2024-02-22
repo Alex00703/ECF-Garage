@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue{% endblock %}
+
+{% block body %}
+
+    <div id="filters">
+        <div class="filter">
+            <p class="filter-title">Prix</p>
+            <div class="min-max">
+                <p class="filter-min">Min: </p>
+                <input type="text" onkeyup="filters()" class="filter-field" value="{{ lowestPrice }}">
+                <p class="filter-max">Max: </p>
+                <input type="text" onkeyup="filters()" class="filter-field" value="{{ highestPrice }}">
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="filter">
+            <p class="filter-title">Année</p>
+            <div class="min-max">
+                <p class="filter-min">Min: </p>
+                <input type="text" onkeyup="filters()" class="filter-field" value="{{ lowestYear }}">
+                <p class="filter-max">Max: </p>
+                <input type="text" onkeyup="filters()" class="filter-field" value="{{ highestYear }}">
+
+            </div>
+            <div class="line"></div>
+        </div>
+        <div class="filter">
+            <p class="filter-title">Kilomètres</p>
+            <div class="min-max">
+                <p class="filter-min">Min: </p>
+                <input type="text" onkeyup="filters()" class="filter-field" value="{{ lowestKilometers }}">
+                <p class="filter-max">Max: </p>
+                <input type="text" onkeyup="filters()" class="filter-field" value="{{ highestKilometers }}">
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div id="catalogue">
+        {% for car in cars %} 
+            <div class="car-sale">
+                <img src="{{ asset('assets/img/cars/' ~ car.getImage) }}" alt="car" class="car-img">
+                <div class="car-description">
+                    <p class="car-title">{{ car.getName() }}</p>
+                    <p class="car-price">{{ car.getPrice() }}€</p>
+                    <p class="car-year">{{ car.getYear() }}</p>
+                    <p class="car-km">{{ car.getKilometers() }} kilomètres</p>
+                </div>
+                <a href="{{ path('app_catalogue_details', {'id': car.getId() })}}" class="basic-btn">DETAILS</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="horaires2">
+        <h1>Horaires</h1>
+        <div id="horaires2-container">
+            <p>Lundi: {{ schedules.getLundi() }}</p>
+            <p>Mardi: {{ schedules.getMardi() }}</p>
+            <p>Mercredi: {{ schedules.getMercredi() }}</p>
+            <p>Jeudi: {{ schedules.getJeudi() }}</p>
+            <p>Vendredi: {{ schedules.getVendredi() }}</p>
+            <p>Samedi: {{ schedules.getSamedi() }}</p>
+            <p>Dimanche: {{ schedules.getDimanche() }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}<script src="{{ asset('assets/js/main.js') }}"></script>{% endblock %}

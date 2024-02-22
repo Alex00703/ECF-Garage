@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue{% endblock %}
+
+{% block body %}
+
+
+            <div class="car-sale-details">
+                <div style="display: flex; flex-direction:row;">
+                    <img src="{{ asset('assets/img/cars/' ~ car.getImage) }}" alt="car" class="car-img-details">
+                    <div class="car-description">
+                        <p class="car-title-details">{{ car.getName() }}</p>
+                        <p class="car-price-details">{{ car.getPrice() }}€</p>
+                        <p class="car-year-details">{{ car.getYear() }}</p>
+                        <p class="car-km-details">{{ car.getKilometers() }} kilomètres</p>
+                    </div>
+                </div>
+                <p class="car-desc">Description:</p>
+                <div style="margin-left:35px;">
+                    <p class="car-desc">{{ car.getDescription()|raw }}</p>
+                </div>
+            </div>
+
+            <div id="contact-us">
+                <h1>Nous contacter</h1>
+
+                {{ form_start(form, { 'attr' : { 'id': 'contact-form' } }) }}
+
+                    <p class="contact-label">Nom</p>
+                    {{ form_widget(form.full_name) }}
+                    <p class="contact-label">Email</p>
+                    {{ form_widget(form.email) }}
+                    <p class="contact-label">Téléphone</p>
+                    {{ form_widget(form.phone) }}
+                    <p class="contact-label">Sujet</p>
+                    {{ form_widget(form.subject) }}
+                    <p class="contact-label">Message</p>
+                    {{ form_widget(form.message) }}
+
+                    {{ form_widget(form) }}
+
+                {{ form_end(form) }}
+            </div>
+            
+    <div id="horaires2">
+        <h1>Horaires</h1>
+        <div id="horaires2-container">
+            <p>Lundi: {{ schedules.getLundi() }}</p>
+            <p>Mardi: {{ schedules.getMardi() }}</p>
+            <p>Mercredi: {{ schedules.getMercredi() }}</p>
+            <p>Jeudi: {{ schedules.getJeudi() }}</p>
+            <p>Vendredi: {{ schedules.getVendredi() }}</p>
+            <p>Samedi: {{ schedules.getSamedi() }}</p>
+            <p>Dimanche: {{ schedules.getDimanche() }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}<script src="{{ asset('assets/js/main.js') }}"></script>{% endblock %}

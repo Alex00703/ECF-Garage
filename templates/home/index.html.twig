@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <div id="header">
+        <div>
+            <h1>Votre voiture, notre passion.</h1>
+            <p>Découvrez notre garage où nous offrons des 
+                                réparations automobiles de première classe 
+                                pour assurer votre tranquillité d'esprit, ainsi 
+                                qu'une sélection soigneusement choisie de
+                                voitures d'occasion certifiées pour répondre à 
+                                tous vos besoins de conduite.
+            </p>
+            <a href="{{ path('app_catalogue') }}" class="basic-btn">CATALOGUE</a>
+        </div>
+        <div>
+            <img id="car" src="{{ asset('assets/img/car.png') }}" alt="car">
+        </div>
+            
+    </div>
+
+    <div id="services">
+        <h1>Nos services</h1>
+        <div id="services-container">
+            {% for service in services %}
+            <div class="service-item">
+                <p class="service-title">{{ service.getName() }}</p>
+                <p class="service-text">{{ service.getDescription()|raw }}</p>
+                <a href="#" class="basic-btn">CONTACT</a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div id="reviews">
+        <h1>Avis clients</h1>
+        <div id="reviews-container">
+            {% for review in reviews %}
+            <div class="review-item">
+                <div class="review-title">
+                    <span class="left-elements">
+                        <img src="{{ asset('assets/img/member.png') }}" style="width=35px; height=35px;" alt="member">
+                        <p class="review-name">{{ review.getName() }}</p>
+                    </span>
+                    <p class="review-note">{{ review.getNote() }}/10</p>
+                </div>
+                <p class="review-text">{{ review.getComment() }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div style="margin: 20px 0;">
+            <a href="{{ path('app_review') }}" class="basic-btn">LAISSER UN AVIS</a>
+        </div>
+
+    </div>
+
+    <div id="horaires">
+        <h1>Horaires</h1>
+        <div id="horaires-container">
+            <p>Lundi: {{ schedules.getLundi() }}</p>
+            <p>Mardi: {{ schedules.getMardi() }}</p>
+            <p>Mercredi: {{ schedules.getMercredi() }}</p>
+            <p>Jeudi: {{ schedules.getJeudi() }}</p>
+            <p>Vendredi: {{ schedules.getVendredi() }}</p>
+            <p>Samedi: {{ schedules.getSamedi() }}</p>
+            <p>Dimanche: {{ schedules.getDimanche() }}</p>
+        </div>
+    </div>
+
+    <div id="contact-us">
+        <h1>Nous contacter</h1>
+        <form id="contact-form" action="#" method="post">
+            <div>
+                <p class="contact-label">Nom</p>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div>
+                <p class="contact-label">Prénom</p>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+
+            <div>
+                <p class="contact-label">Téléphone</p>
+                <input type="tel" id="telephone" name="telephone">
+            </div>
+
+            <div>
+                <p class="contact-label">Email</p>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <p class="contact-label">Sujet</p>
+                <input type="text" id="sujet" name="sujet">
+            </div>
+
+            <div>
+                <p class="contact-label">Message</p>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

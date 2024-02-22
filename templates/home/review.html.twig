@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Laisser un avis{% endblock %}
+
+{% block body %}
+
+    <div id="reviews">
+        <h1>Laisser un avis</h1>
+            {{ form_start(form, { 'attr' : { 'id': 'contact-form' } }) }}
+                <p class="contact-label">Nom</p>
+                {{ form_widget(form.name) }}
+                <p class="contact-label">Commentaire</p>
+                {{ form_widget(form.comment) }}
+                <p class="contact-label">Note</p>
+                {{ form_widget(form.note) }}
+
+                {{ form_widget(form) }}
+
+            {{ form_end(form) }}
+    </div>
+
+{% endblock %}

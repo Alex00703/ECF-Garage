@@ -1,0 +1,585 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: 'Lobster';
+      font-style: normal;
+      font-weight: 400;
+      src: url('../fonts/lobster.otf');
+    }
+
+    
+body {
+    font-family: Roboto, sans-serif;
+    color: white;
+    background-color: #161616;
+}
+
+/*
+ * NAVBAR
+*/
+
+#mobile-desktop{
+    display: none;
+}
+
+#small-icon {
+    width: 45px;
+    height: 45px;
+}
+
+#logo {
+    width: 173px;
+    height: 45px;
+}
+
+#small-search {
+    width: 29px;
+    height: 29px;
+}
+
+#mobile-nav {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    align-items: center;
+    margin-top: 23px;
+}
+
+.nav-item {
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+#mobile-nav-right{
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+
+}
+
+/*
+ * FOOTER
+*/
+
+footer {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #131313;
+}
+
+#footer-text{
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#content{
+    min-height: calc(100vh - 123px) ;
+}
+
+/*
+ * HEADER 
+*/
+
+#header {
+    margin: 40px 50px;
+    max-width: 700px;
+}
+
+#header h1{
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFA800;
+}
+
+#header p{
+    font-family: 'Lobster';
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#car {
+    display: none;
+}
+
+/*
+ * SERVICES 
+*/
+
+#services {
+    background-color: #131313;
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+} 
+
+#services-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.service-item{
+    width: 345px;
+    padding: 40px 0;
+    background-color: #161616;
+    border-top: solid 5px #FFA800;
+    margin-bottom: 20px;
+}
+
+#services > h1 {
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFA800;
+}
+
+.service-title{
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-item div{
+    margin-bottom: 40px;
+}
+
+/*
+ * REVIEW
+*/
+
+#reviews h1 {
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFA800;
+}
+
+#reviews {
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+} 
+
+#reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-name {
+    margin-left: 10px;
+    font-family: 'Lobster';
+    font-size: 24px;
+}
+
+.left-elements {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.review-note {
+    margin-left: auto;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+.review-text{
+    font-size: 15px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.review-item{
+    width: 400px;
+    padding: 30px 0;
+    background-color: #131313;
+    border-top: solid 5px #FFA800;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+
+/*
+ * HORAIRES 
+*/
+
+#horaires h1, #horaires2 h1{
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFA800;
+}
+
+#horaires, #horaires2{
+    background-color: #131313;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#horaires2{
+    background-color: #161616;
+}
+
+#horaires-container, #horaires2-container{
+    width: 400px;
+    padding: 30px 0;
+    background-color: #161616;
+    border-top: solid 5px #FFA800;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#horaires2-container{
+    background-color: #131313;
+}
+
+#horaires-container p, #horaires2-container p{
+    font-family: 'Lobster';
+    font-size: 25px;
+}
+
+/*
+ * CONTACT 
+*/
+
+
+#contact-us h1 {
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFA800;
+}
+
+#contact-us {
+    background-color: #161616;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#contact-form {
+    text-align: left;
+    width: 80%;
+    max-width: 1062px;
+    padding: 30px 30px;
+    background-color: #131313;
+    border-top: solid 5px #FFA800;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#contact-form div {
+    padding: 0 30px;
+}
+
+.contact-label {
+    font-family: 'Lobster';
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="text"]:not(.filter-field), input[type="email"], input[type="tel"], input[type="password"], input[type="number"], textarea {
+    background-color: #161616;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 15px 0;
+}
+
+textarea{
+    resize: vertical;
+}
+
+input[type="submit"], button[type="submit"] {
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*
+ * FORMS
+*/
+#auth-container{
+    background-color: #161616;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#auth-container h1{
+    font-family: 'Lobster';
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #FFA800;
+}
+
+#login-form{
+    text-align: left;
+    width: 80%;
+    max-width: 500px;
+    padding: 60px 30px;
+    background-color: #131313;
+    border-top: solid 5px #FFA800;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#login-form label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+#login-form button {
+    margin-top: 50px;
+    width: 100%;
+}
+
+/*
+ * BUTTONS 
+*/
+
+.basic-btn, input[type="submit"], button{
+    background-color: #FFA800;
+    border-radius: 5px;
+    color: #FFE1A6;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: none;
+}
+
+.basic-btn:hover, input[type="submit"]:hover, button:hover{
+    background-color: #ff9100;
+    cursor: pointer;
+
+}
+
+/*
+ * CATALOGUE
+*/
+
+#filters {
+    background-color: #131313;
+    margin: 0 auto;
+    width: 450px;
+    margin-bottom: 20px;
+    min-height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 960px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.filter {
+    text-align: center;
+    margin: 20px;
+    max-height: 50px;
+}
+
+.min-max{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.filter-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+
+}
+
+.filter-min, .filter-max {
+    font-size: 12px;
+}
+
+.line {
+    background-color: white;
+    width: 186px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.car-img {
+    background-color: #8F8F8F;
+    width: 160px;
+    height: 160px;
+    margin: 15px;
+    margin-right: 25px;
+    object-fit: contain;
+}
+
+.car-sale {
+    margin: 0 auto;
+    background-color: #131313;
+    height: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    max-width: 960px;
+    width: 100%;
+}
+
+.car-sale a {
+    max-height: 20px;
+    width: 100%;
+    margin: 0 15px;
+    text-align: center;
+}
+
+.car-title {
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+.car-price {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.car-year, .car-km {
+    font-size: 20px;
+    color: #C3C3C3;
+}
+
+.car-img-details {
+    background-color: #8F8F8F;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    margin-right: 25px;
+    object-fit: contain;
+}
+
+.car-sale-details {
+    margin: 0 auto;
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    max-width: 960px;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.car-title-details {
+    font-size: 36px;
+    margin-top: 15px;
+}
+
+.car-price-details {
+    font-size: 48px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.car-year-details, .car-km-details {
+    font-size: 24px;
+    color: #C3C3C3;
+}
+
+.car-desc {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.filter-field{
+    background-color: #131313;
+    color: #FFA800;
+    border: none;
+    outline: none;
+    width: 45px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    #mobile-nav{
+        display: none;
+    }
+
+    #mobile-desktop{
+        display: flex;
+        list-style-type: none;
+        width: 100%;
+        align-items: center;
+        margin-top: 23px;
+    }
+
+    #mobile-desktop a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #mobile-desktop a:hover {
+        text-decoration: none;
+        color: #FFA800;
+    }
+}
+
+@media screen and (min-width: 1224px) {
+
+    #header {
+        display: flex;
+        margin: 50px 100px;
+        align-items: center;
+    }
+    #header p{
+        font-size: 32px;
+        margin-bottom: 40px;
+        width: 45vw;
+    }
+    #car{
+        display: block;
+        margin-left: 100px;
+        width: calc(711px*0.7);
+        height: calc(569px*0.7);
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+    #header h1{
+        font-family: 'Lobster';
+        font-size: 60px;
+        margin-bottom: 20px;
+        color: #FFA800;
+
+    }
+    #header p{
+        font-family: 'Lobster';
+        font-size: 32px;
+        margin-bottom: 40px;
+        width: 45vw;
+    }
+
+    #car{
+        display: block;
+        margin-left: 0;
+        width: 711px;
+        height: 569px;
+    }
+}
