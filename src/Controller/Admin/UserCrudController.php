@@ -18,12 +18,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\PercentField;
 
 class UserCrudController extends AbstractCrudController
 {
-    private $passwordHasher;
-
-    public function __construct(UserPasswordHasherInterface $passwordHasher)
-    {
-        $this->passwordHasher = $passwordHasher;
-    }
+    public function __construct(public UserPasswordHasherInterface $userPasswordHasher
+    ) {}
 
     public static function getEntityFqcn(): string
     {

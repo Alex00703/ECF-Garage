@@ -44,15 +44,17 @@
             
     <div id="horaires2">
         <h1>Horaires</h1>
-        <div id="horaires2-container">
-            <p>Lundi: {{ schedules.getLundi() }}</p>
-            <p>Mardi: {{ schedules.getMardi() }}</p>
-            <p>Mercredi: {{ schedules.getMercredi() }}</p>
-            <p>Jeudi: {{ schedules.getJeudi() }}</p>
-            <p>Vendredi: {{ schedules.getVendredi() }}</p>
-            <p>Samedi: {{ schedules.getSamedi() }}</p>
-            <p>Dimanche: {{ schedules.getDimanche() }}</p>
-        </div>
+        {% if schedules != null %}
+            <div id="horaires2-container">
+                <p>Lundi: {{ schedules.getLundi() }}</p>
+                <p>Mardi: {{ schedules.getMardi() }}</p>
+                <p>Mercredi: {{ schedules.getMercredi() }}</p>
+                <p>Jeudi: {{ schedules.getJeudi() }}</p>
+                <p>Vendredi: {{ schedules.getVendredi() }}</p>
+                <p>Samedi: {{ schedules.getSamedi() }}</p>
+                <p>Dimanche: {{ schedules.getDimanche() }}</p>
+            </div>
+        {% endif %}
     </div>
 
 {% endblock %}
